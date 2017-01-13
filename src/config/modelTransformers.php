@@ -10,4 +10,5 @@ return [
     |
     */
     'transformers_namespace' => 'App\Transformers',
+    'ios_transformers_namespace' => 'App\Transformers\IOS',
 ];
