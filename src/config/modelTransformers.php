@@ -11,4 +11,5 @@ return [
     */
     'transformers_namespace' => 'App\Transformers',
     'ios_transformers_namespace' => 'App\Transformers\IOS',
+    'native_ios_header_flag' => 'native-ios-app',
 ];
