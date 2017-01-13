@@ -1,3 +1,7 @@
+# Forked version
+Conditionalizes the transformers used based on header value.
+
+
 # Laravel 5 Model Transformers
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/themsaid/laravel-model-transformers.svg?style=flat-square)](https://packagist.org/packages/themsaid/laravel-model-transformers)
