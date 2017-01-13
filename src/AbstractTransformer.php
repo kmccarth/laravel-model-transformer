@@ -30,6 +30,16 @@ class AbstractTransformer
     static function transform($modelOrCollection, $options = [])
     {
         $static = new static($options);
+        
+        if(request() && request()->header(config('modelTransformers.native_ios_header_flag'))) {
+          config( [ 'modelTransformers.transformers_namespace' =>  config('modelTransformers.ios_transformers_namespace') ] );
+          $arr = [];
+          if ($modelOrCollection instanceof Collection){
+            foreach($modelOrCollection as $c) array_push($arr, transform($c));
+            return $arr;
+          }
+          return $static->transformModel($modelOrCollection);
+        }
 
         if ($modelOrCollection instanceof Collection) {
             return $modelOrCollection->map([$static, 'transformModel'])->toArray();
